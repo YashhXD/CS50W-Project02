@@ -2,7 +2,7 @@
 
 {% block body %}
     <h1>Add New topic in encyclopedia</h1>
-    <form action="{% url 'encyclopedia:add' %}" method="post">
+    <form action="{% url 'encyclopedia:add' %}" method="POST">
         {% csrf_token %}
         {{ form }}
         <input type="submit">
