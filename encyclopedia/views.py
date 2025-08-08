@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django import forms
 
 from . import util
+from encyclopedia import entries
 entries=["Python","CSS","Django","Git","HTML"]
 
 class NewTopicForm(forms.Form):
