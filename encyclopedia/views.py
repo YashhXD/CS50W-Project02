@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django import forms
 
 from . import util
+entry = []
 
 class NewTopicForm(forms.Form):
     TopicName = forms.CharField(label="Enter New Page")
@@ -18,7 +19,7 @@ def add(request):
     if request.method == "POST":
         form = NewTopicForm(request.POST)
         if form.is_valid():
-            TopicName = form.cleaned_data["TopicName"]
+            entry form.cleaned_data["TopicName"]
             entries.append(TopicName)
         else:
             return render(request, "entries/add.html",{
