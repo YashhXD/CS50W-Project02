@@ -8,8 +8,8 @@
     <h1>All Pages</h1>
 
     <ul>
-        {% for entry in entries %}
-            <li>{{ entry }}</li>
+        {% for encyclopedia in pedia %}
+            <li>{{ encyclopedia }}</li>
         {% empty %}
             <li>No Entry.</li>
         {% endfor %}
