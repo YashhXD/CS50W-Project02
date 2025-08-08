@@ -2,10 +2,10 @@
 
 {% block body %}
     <h1>Add New topic in encyclopedia</h1>
-    <form action="{% url 'pedia:add' %}" method="post">
+    <form action="{% url 'encyclopedia:add' %}" method="post">
         {% csrf_token %}
         {{ form }}
         <input type="submit">
     </form>
-    <a href="{% url 'pedia:index' %}">View all Pages</a>
+    <a href="{% url 'encyclopedia:index' %}">View all Pages</a>
 {% endblock %}
