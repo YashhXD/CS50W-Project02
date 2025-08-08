@@ -2,27 +2,26 @@ from django.shortcuts import render
 from django import forms
 
 from . import util
-entry = []
+encyclopedia = []
 
 class NewTopicForm(forms.Form):
-    TopicName = forms.CharField(label="Enter New Page")
-    TopicBody = forms.CharField(label="Enter about the topic")
+    pedia = forms.CharField(label="Enter New Page name")
 
 def index(request):
     if "entries" not in request.session:
         request.session["entries"] = []
     return render(request, "encyclopedia/index.html", {
-        "entries": request.session["entries"]
+        "encyclopedia": encyclopedia
     })
 
 def add(request):
     if request.method == "POST":
         form = NewTopicForm(request.POST)
         if form.is_valid():
-            entry form.cleaned_data["TopicName"]
-            entries.append(TopicName)
+            pedia = form.cleaned_data["pedia"]
+            encyclopedia.append(pedia)
         else:
-            return render(request, "entries/add.html",{
+            return render(request, "encyclopedia/add.html",{
                 "form":form
             })
     return render(request, "encyclopedia/add.html", {
